@@ -18,6 +18,7 @@ public:
     std::vector<std::string> getHistoriqueTexte(){return historique_texte_;};
     void addEvent(sf::RectangleShape rectangle);
     void addHistorique(std::string commande);
+    void clearEvent(){ tableau_.clear();};
 };
 
 

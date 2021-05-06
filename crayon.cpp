@@ -17,6 +17,11 @@ Crayon::Crayon(sf::RenderWindow * window,Historique *historique,float taille, sf
     angle_ = angle;
 }
 
+Crayon::~Crayon(){
+    delete historique_;
+    delete window_;
+}
+
 void Crayon::Move(int val)
 {
         if (enable_ == true) {

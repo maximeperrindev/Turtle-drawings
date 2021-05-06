@@ -10,6 +10,9 @@
 Terminal::Terminal(Crayon *crayon){
     crayon_ = crayon;
 }
+Terminal::~Terminal(){
+    delete crayon_;
+}
 
 void Terminal::start(){
     string action = "";
@@ -28,7 +31,17 @@ void Terminal::start(){
                 crayon_->Move(stoi(args[0]));
                 drawed = true;
             }
-            else if(function == "rotate") crayon_->setAngle(stof(args[0]));
+            if(function == "recule"){
+                crayon_->Move(-(stoi(args[0])));
+                drawed = true;
+            }
+            else if(function == "droite") crayon_->setAngle(stof(args[0]));
+            else if(function == "gauche") crayon_->setAngle(-(stof(args[0])));
+            else if(function == "nettoie"){
+                crayon_->getHistorique()->clearEvent();
+                crayon_->getWindow()->clear(sf::Color::Black);
+                crayon_->getWindow()->display();
+            }
         }
         if(drawed){
             for(auto i : crayon_->getHistorique()->getHistorique()) crayon_->getWindow()->draw(i);
@@ -36,6 +49,7 @@ void Terminal::start(){
         }
     }while(action != "stop");
 }
+
 vector<string> Terminal::split(string s, string delimiter){
     size_t pos_start = 0, pos_end, delim_len = delimiter.length();
     string token;
