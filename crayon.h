@@ -30,11 +30,13 @@ public:
     int getPos_x() { return pos_x_; };
     int getPos_y() { return pos_y_; };
     float getAngle() { return angle_; };
-    void setAngle(float angle) { angle_ = angle; };
+    void setAngle(float angle) { angle_ += angle; };
     void setTaille(float taille) { taille_ = taille; };
     void setCouleur(sf::Color color) { couleur_ = color; };
     void setEnable(bool enable) { enable_ = enable; };
     void setPos_x(int pos_x){pos_x_ = pos_x;};
     void setPos_y(int pos_y){pos_y_ = pos_y;};
+    sf::RenderWindow* getWindow(){return window_;};
+    Historique* getHistorique(){return historique_;};
 
 };
