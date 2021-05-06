@@ -10,6 +10,7 @@
 #include <iostream>
 using namespace std;
 #include <SFML/Graphics.hpp>
+#include "historique.h"
 
 class Crayon {
     float taille_;
@@ -19,8 +20,9 @@ class Crayon {
     int pos_y_;
     float angle_;
     sf::RenderWindow *window_;
+    Historique *historique_;
 public:
-    Crayon(sf::RenderWindow *window,float taille = 1, sf::Color couleur = sf::Color::White, bool enable = true, int pos_x = 0, int pos_y = 0, float angle = 0);
+    Crayon(sf::RenderWindow *window,Historique *historique,float taille = 1, sf::Color couleur = sf::Color::White, bool enable = true, int pos_x = 0, int pos_y = 0, float angle = 0);
     void Move(int val);
     int getTaille() { return taille_; };
     sf::Color getCouleur() { return couleur_; };

@@ -6,8 +6,9 @@
 //
 #include "crayon.h"
 
-Crayon::Crayon(sf::RenderWindow * window,float taille, sf::Color couleur, bool enable, int pos_x, int pos_y, float angle){
+Crayon::Crayon(sf::RenderWindow * window,Historique *historique,float taille, sf::Color couleur, bool enable, int pos_x, int pos_y, float angle){
     window_ = window;
+    historique_ = historique;
     taille_ = taille;
     couleur_ = couleur;
     enable_ = enable;
@@ -29,7 +30,7 @@ void Crayon::Move(int val)
             rectangle.setRotation(angle_);
 
             //delay pour la vitesse
-            window_->draw(rectangle);
+            historique_->addEvent(rectangle);
             pos_x_ = (val)*cos(degToRad(angle_)) + pos_x_ + taille_/2;
             pos_y_ = (val)*sin(degToRad(angle_)) + pos_y_ + taille_/2;
             
