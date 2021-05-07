@@ -19,6 +19,7 @@ public:
     void addEvent(sf::RectangleShape rectangle);
     void addHistorique(std::string commande);
     void clearEvent(){ tableau_.clear();};
+    void clearHistorique(){tableau_.clear();};
 };
 
 

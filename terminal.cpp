@@ -33,13 +33,8 @@ void Terminal::start(string action){
             }
             else if(function == "droite") crayon_->setAngle(stof(args[0]));
             else if(function == "gauche") crayon_->setAngle(-(stof(args[0])));
-            else if(function == "nettoie"){
-                int y = 0;
-                for(auto i : crayon_->getHistorique()->getHistorique()){
-                    crayon_->getHistorique()->getHistorique().at(y).setFillColor(sf::Color::White);
-                    cout<<"Planche nettoyée !"<<endl;
-                    y++;
-                }
+            else if(function == "nettoie") {
+                crayon_->getHistorique()->clearHistorique();
             }
         }
 }
