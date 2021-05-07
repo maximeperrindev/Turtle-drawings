@@ -24,7 +24,7 @@ void Renderer::renderLayout(float width, float height){
     /* Layout */
     sf::RectangleShape drawingForm(sf::Vector2f(width*0.8, height*0.725));
     sf::RectangleShape historiqueForm(sf::Vector2f(width*0.2, height*0.725));
-    sf::RectangleShape inputForm(sf::Vector2f(width*0.5, height*0.2));
+    sf::RectangleShape inputForm(sf::Vector2f(width*0.5, height*0.2+100));
     sf::RectangleShape lexique(sf::Vector2f(width*0.5, height*0.2));
     sf::RectangleShape input(sf::Vector2f(width*0.5 - 50, height*0.075));
     drawingForm.setPosition(width*0.2,0);

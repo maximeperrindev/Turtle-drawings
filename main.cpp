@@ -58,6 +58,19 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
+            if(event.type == sf::Event::MouseButtonPressed){
+                if (btn_envoyer.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
+                    cout<<"Bouton envoyer cliqué"<<endl;
+                    terminal->start((string)playerInput);
+                    playerInput.clear();
+                    playerText.setString("");
+                }
+                if (btn_nettoyer.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
+                    cout<<"Bouton nettoyer cliqué"<<endl;
+                    hist->clearHistorique();
+                }
+
+            }
             // fermeture de la fenêtre lorsque l'utilisateur le souhaite
             if (event.type == sf::Event::Closed)
                 window.close();
