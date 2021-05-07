@@ -33,11 +33,17 @@ void Crayon::Move(int val)
             //Création d'un rectangle de longueur 1 et de largeur taille crayon
             rectangle.setPosition(pos_x_, pos_y_);
             rectangle.setRotation(angle_);
+            rectangle.setFillColor(couleur_);
 
             //delay pour la vitesse
             historique_->addEvent(rectangle);
-            pos_x_ = (val)*cos(degToRad(angle_)) + pos_x_ + taille_/2;
-            pos_y_ = (val)*sin(degToRad(angle_)) + pos_y_ + taille_/2;
+            pos_x_ = (val)*cos(degToRad(angle_)) + pos_x_;
+            pos_y_ = (val)*sin(degToRad(angle_)) + pos_y_;
+            if(angle_ != 0){
+                pos_x_ += taille_/2;
+                pos_y_ += taille_/2;
+
+            }
             
         }
         else {

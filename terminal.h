@@ -15,7 +15,7 @@ class Terminal{
 public:
     Terminal(Crayon *crayon);
     ~Terminal();
-    void start();
+    void start(string action);
 private:
     vector<string> split(string s, string delimiter);
 };
