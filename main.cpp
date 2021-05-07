@@ -35,6 +35,21 @@ int main()
     sf::Text playerText("",font, 40);
     playerText.setColor(sf::Color::Black);
     playerText.setPosition(width*0.5 + 35, height*0.7 + 35);
+    
+    /* Boutons */
+    sf::RectangleShape btn_nettoyer(sf::Vector2f(300, 60));
+    btn_nettoyer.setFillColor(sf::Color(209, 109, 106));
+    btn_nettoyer.setPosition(width*0.5 + 25,height*0.7 + 230);
+    sf::Text txt_nettoyer("Nettoyer",font, 40);
+    txt_nettoyer.setColor(sf::Color::Black);
+    txt_nettoyer.setPosition((btn_nettoyer.getPosition().x+btn_nettoyer.getSize().x/2 - txt_nettoyer.getGlobalBounds().width/2),(btn_nettoyer.getPosition().y));
+    
+    sf::RectangleShape btn_envoyer(sf::Vector2f(300, 60));
+    btn_envoyer.setFillColor(sf::Color(120, 165, 90));
+    btn_envoyer.setPosition(width - btn_envoyer.getSize().x - 25,height*0.7 + 230);
+    sf::Text txt_envoyer("Envoyer",font, 40);
+    txt_envoyer.setColor(sf::Color::Black);
+    txt_envoyer.setPosition((btn_envoyer.getPosition().x+btn_envoyer.getSize().x/2 - txt_envoyer.getGlobalBounds().width/2),(btn_envoyer.getPosition().y));
 
     // on fait tourner le programme tant que la fenêtre n'a pas été fermée
     while (window.isOpen())
@@ -75,6 +90,10 @@ int main()
         }
         window.clear(sf::Color::White); //Nettoyage de la fenetre
         renderer->renderLayout(width, height); //Affichage du layout
+        window.draw(btn_nettoyer);
+        window.draw(txt_nettoyer);
+        window.draw(btn_envoyer);
+        window.draw(txt_envoyer);
         window.draw(playerText); //Affichage saisie utilisateur
         for(auto i : crayon->getHistorique()->getHistorique()) window.draw(i); //Affichage du dessin
         window.display(); //Affichage fenetre;
