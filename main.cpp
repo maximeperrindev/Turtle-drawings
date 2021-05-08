@@ -23,7 +23,6 @@ int main()
     Renderer *renderer = new Renderer(&window);
     FileSystem *file = new FileSystem("", hist);
     
-    crayon->setCouleur(sf::Color::Black);
     crayon->setPos_x(width*0.2 + width*0.8/2);
     crayon->setPos_y(0 + height*0.725/2);
 

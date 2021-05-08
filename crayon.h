@@ -22,7 +22,7 @@ class Crayon {
     sf::RenderWindow *window_;
     Historique *historique_;
 public:
-    Crayon(sf::RenderWindow *window,Historique *historique,float taille = 1, sf::Color couleur = sf::Color::White, bool enable = true, int pos_x = 0, int pos_y = 0, float angle = 0);
+    Crayon(sf::RenderWindow *window,Historique *historique,float taille = 1, sf::Color couleur = sf::Color::Black bool enable = true, int pos_x = 0, int pos_y = 0, float angle = 0);
     ~Crayon();
     void Move(int val);
     int getTaille() { return taille_; };
