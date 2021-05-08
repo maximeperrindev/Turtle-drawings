@@ -22,6 +22,7 @@ void Terminal::start(string action){
             string arguments = action.substr(parenthesisIndex+1, parenthesisEnd);
             vector<string> args = split(arguments, ",");
             string function = action.substr(0,parenthesisIndex);
+            if(args[0] != ""){
             if(function == "avance"){
                 crayon_->Move(stoi(args[0]));
                 cout<<"Avance de "<<stoi(args[0])<<endl;
@@ -35,6 +36,8 @@ void Terminal::start(string action){
             else if(function == "gauche") crayon_->setAngle(-(stof(args[0])));
             else if(function == "nettoie") {
                 crayon_->getHistorique()->clearHistorique();
+            }
+            crayon_->getHistorique()->addHistorique(action);
             }
         }
 }

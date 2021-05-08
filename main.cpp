@@ -6,6 +6,7 @@ using namespace std;
 #include "historique.h"
 #include "terminal.h"
 #include "renderer.h"
+#include "filesystem.h"
 
 int main()
 {
@@ -20,6 +21,7 @@ int main()
     Crayon *crayon = new Crayon(&window, hist);
     Terminal *terminal = new Terminal(crayon);
     Renderer *renderer = new Renderer(&window);
+    FileSystem *file = new FileSystem("", hist);
     
     crayon->setCouleur(sf::Color::Black);
     crayon->setPos_x(width*0.2 + width*0.8/2);
@@ -50,6 +52,13 @@ int main()
     sf::Text txt_envoyer("Envoyer",font, 40);
     txt_envoyer.setColor(sf::Color::Black);
     txt_envoyer.setPosition((btn_envoyer.getPosition().x+btn_envoyer.getSize().x/2 - txt_envoyer.getGlobalBounds().width/2),(btn_envoyer.getPosition().y));
+    
+    sf::RectangleShape btn_save(sf::Vector2f(width*0.2-150, 60));
+    btn_save.setFillColor(sf::Color(120, 165, 90));
+    btn_save.setPosition(75,330+height*0.45 + 30);
+    sf::Text txt_save("Sauvegarder",font, 40);
+    txt_save.setColor(sf::Color::Black);
+    txt_save.setPosition((btn_save.getPosition().x+btn_save.getSize().x/2 - txt_save.getGlobalBounds().width/2),(btn_save.getPosition().y));
 
     // on fait tourner le programme tant que la fenêtre n'a pas été fermée
     while (window.isOpen())
@@ -68,6 +77,14 @@ int main()
                 if (btn_nettoyer.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
                     cout<<"Bouton nettoyer cliqué"<<endl;
                     hist->clearHistorique();
+                }
+                if (btn_save.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
+                    cout<<"Bouton sauvegarder cliqué"<<endl;
+                    if(file->save()){
+                        cout<<"Fichier sauvegardé avec succès !"<<endl;
+                    }else{
+                        cout<<"Erreur lors de la sauvegarde"<<endl;
+                    }
                 }
 
             }
@@ -107,8 +124,20 @@ int main()
         window.draw(txt_nettoyer);
         window.draw(btn_envoyer);
         window.draw(txt_envoyer);
+        window.draw(btn_save);
+        window.draw(txt_save);
         window.draw(playerText); //Affichage saisie utilisateur
         for(auto i : crayon->getHistorique()->getHistorique()) window.draw(i); //Affichage du dessin
+        int nbHist = 0;
+        for(auto j : crayon->getHistorique()->getHistoriqueTexte()){
+            if(345+nbHist*55<345+height*0.45){
+            sf::Text textHistorique(j,font, 35);
+            textHistorique.setColor(sf::Color::Black);
+            textHistorique.setPosition(85, 345 + nbHist*50);
+            window.draw(textHistorique);
+            nbHist++;
+            }
+        }
         window.display(); //Affichage fenetre;
     }
 

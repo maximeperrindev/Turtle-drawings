@@ -21,9 +21,21 @@ void Renderer::renderLayout(float width, float height){
     logoSprite.setOrigin(spriteSize.width/2.,spriteSize.height/2.);
     logoSprite.setPosition(spriteSize.width/4,spriteSize.height/4);
     
+    /* Font */
+    sf::Font font;
+    if (!font.loadFromFile("assets/LouisGeorgeCafe.ttf")) cout<<"Erreur lors du chargement de la police"<<endl;
+    sf::Text historiqueTitle("Historique :",font, 60);
+    historiqueTitle.setColor(sf::Color::Black);
+    historiqueTitle.setPosition(75, 230);
+    
+    sf::Text lexiqueTitle("Lexique :",font, 60);
+    lexiqueTitle.setColor(sf::Color::Black);
+    lexiqueTitle.setPosition(75, height*0.7 + 20);
+    
     /* Layout */
     sf::RectangleShape drawingForm(sf::Vector2f(width*0.8, height*0.725));
     sf::RectangleShape historiqueForm(sf::Vector2f(width*0.2, height*0.725));
+    sf::RectangleShape historique(sf::Vector2f(width*0.2-150, height*0.45));
     sf::RectangleShape inputForm(sf::Vector2f(width*0.5, height*0.2+100));
     sf::RectangleShape lexique(sf::Vector2f(width*0.5, height*0.2));
     sf::RectangleShape input(sf::Vector2f(width*0.5 - 50, height*0.075));
@@ -35,6 +47,9 @@ void Renderer::renderLayout(float width, float height){
     historiqueForm.setOutlineThickness(2);
     historiqueForm.setOutlineColor(sf::Color::Black);
     historiqueForm.setFillColor(sf::Color(202, 218, 243));
+    historique.setPosition(75,330);
+    historique.setOutlineThickness(2);
+    historique.setOutlineColor(sf::Color::Black);
     lexique.setPosition(0,height*0.7);
     lexique.setOutlineThickness(2);
     lexique.setOutlineColor(sf::Color::Black);
@@ -47,8 +62,11 @@ void Renderer::renderLayout(float width, float height){
     
     window_->draw(drawingForm);
     window_->draw(historiqueForm);
+    window_->draw(historique);
+    window_->draw(historiqueTitle);
     window_->draw(inputForm);
     window_->draw(lexique);
+    window_->draw(lexiqueTitle);
     window_->draw(input);
     window_->draw(logoSprite);
 }

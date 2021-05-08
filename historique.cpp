@@ -14,5 +14,5 @@ void Historique::addEvent(sf::RectangleShape rectangle){
     tableau_.push_back(rectangle);
 }
 void Historique::addHistorique(std::string commande){
-    historique_texte_.push_back(commande);
+    historique_texte_.insert(historique_texte_.begin(),commande);
 }
