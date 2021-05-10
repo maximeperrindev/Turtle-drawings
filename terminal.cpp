@@ -16,10 +16,13 @@ Terminal::~Terminal(){
 
 void Terminal::start(string action){
     bool drawed = false;
+    //Conversion en minuscule
+    std::transform(action.begin(), action.end(), action.begin(),
+        [](unsigned char c){ return std::tolower(c); });
+    
         if(action != "stop"){
-            unsigned long parenthesisIndex = action.find('(');
-            unsigned long parenthesisEnd = action.find(')');
-            string arguments = action.substr(parenthesisIndex+1, parenthesisEnd);
+            unsigned long parenthesisIndex = action.find(' ');
+            string arguments = action.substr(parenthesisIndex+1, action.back());
             vector<string> args = split(arguments, ",");
             string function = action.substr(0,parenthesisIndex);
             if(args[0] != ""){
