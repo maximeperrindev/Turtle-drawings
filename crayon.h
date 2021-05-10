@@ -40,6 +40,7 @@ public:
     void setEnable(bool enable) { enable_ = enable; };
     void setPos_x(int pos_x){pos_x_ = pos_x;};
     void setPos_y(int pos_y){pos_y_ = pos_y;};
+    void goBack();
     sf::RenderWindow* getWindow(){return window_;};
     Historique* getHistorique(){return historique_;};
 

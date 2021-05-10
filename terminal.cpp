@@ -40,6 +40,12 @@ void Terminal::start(string action){
             else if(function == "taille") crayon_->setTaille(stoi(args[0]));
             else if(function == "levestylo") crayon_->setEnable(false);
             else if(function == "posestylo") crayon_->setEnable(true);
+            else if(function == "retour"){
+                if(crayon_->getHistorique()->getHistorique().size() != 0){
+                    crayon_->goBack();
+                    crayon_->getHistorique()->deleteLasteEvent();
+                }
+            }
             crayon_->getHistorique()->addHistorique(action);
             }
         }

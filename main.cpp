@@ -36,7 +36,7 @@ int main()
     
     /* Commande utilisateur */
     sf::Text playerText("",font, 40);
-    playerText.setColor(sf::Color::Black);
+    playerText.setFillColor(sf::Color::Black);
     playerText.setPosition(width*0.5 + 35, height*0.7 + 35);
     
     /* Boutons */
@@ -44,21 +44,21 @@ int main()
     btn_nettoyer.setFillColor(sf::Color(209, 109, 106));
     btn_nettoyer.setPosition(width*0.5 + 25,height*0.7 + 230);
     sf::Text txt_nettoyer("Nettoyer",font, 40);
-    txt_nettoyer.setColor(sf::Color::Black);
+    txt_nettoyer.setFillColor(sf::Color::Black);
     txt_nettoyer.setPosition((btn_nettoyer.getPosition().x+btn_nettoyer.getSize().x/2 - txt_nettoyer.getGlobalBounds().width/2),(btn_nettoyer.getPosition().y));
     
     sf::RectangleShape btn_envoyer(sf::Vector2f(300, 60));
     btn_envoyer.setFillColor(sf::Color(120, 165, 90));
     btn_envoyer.setPosition(width - btn_envoyer.getSize().x - 25,height*0.7 + 230);
     sf::Text txt_envoyer("Envoyer",font, 40);
-    txt_envoyer.setColor(sf::Color::Black);
+    txt_envoyer.setFillColor(sf::Color::Black);
     txt_envoyer.setPosition((btn_envoyer.getPosition().x+btn_envoyer.getSize().x/2 - txt_envoyer.getGlobalBounds().width/2),(btn_envoyer.getPosition().y));
     
     sf::RectangleShape btn_save(sf::Vector2f(width*0.2-150, 60));
     btn_save.setFillColor(sf::Color(120, 165, 90));
     btn_save.setPosition(75,330+height*0.45 + 30);
     sf::Text txt_save("Sauvegarder",font, 40);
-    txt_save.setColor(sf::Color::Black);
+    txt_save.setFillColor(sf::Color::Black);
     txt_save.setPosition((btn_save.getPosition().x+btn_save.getSize().x/2 - txt_save.getGlobalBounds().width/2),(btn_save.getPosition().y));
 
     // on fait tourner le programme tant que la fenêtre n'a pas été fermée
@@ -133,7 +133,7 @@ int main()
         for(auto j : crayon->getHistorique()->getHistoriqueTexte()){
             if(345+nbHist*55<345+height*0.45){
             sf::Text textHistorique(j,font, 35);
-            textHistorique.setColor(sf::Color::Black);
+            textHistorique.setFillColor(sf::Color::Black);
             textHistorique.setPosition(85, 345 + nbHist*50);
             window.draw(textHistorique);
             nbHist++;

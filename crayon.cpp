@@ -49,4 +49,13 @@ void Crayon::Move(int val)
             tortue_->move(pos_x_, pos_y_);
             
 }
+
+void Crayon::goBack(){
+    float size = historique_->getHistorique()[historique_->getHistorique().size()-1].getSize().x;
+    pos_x_ -= (size)*cos(degToRad(angle_));
+    pos_y_ -= (size)*sin(degToRad(angle_));
+    tortue_->move(pos_x_, pos_y_);
+    
+    
+}
     

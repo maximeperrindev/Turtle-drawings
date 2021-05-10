@@ -25,11 +25,11 @@ void Renderer::renderLayout(float width, float height){
     sf::Font font;
     if (!font.loadFromFile("assets/LouisGeorgeCafe.ttf")) cout<<"Erreur lors du chargement de la police"<<endl;
     sf::Text historiqueTitle("Historique :",font, 60);
-    historiqueTitle.setColor(sf::Color::Black);
+    historiqueTitle.setFillColor(sf::Color::Black);
     historiqueTitle.setPosition(75, 230);
     
     sf::Text lexiqueTitle("Lexique :",font, 60);
-    lexiqueTitle.setColor(sf::Color::Black);
+    lexiqueTitle.setFillColor(sf::Color::Black);
     lexiqueTitle.setPosition(75, height*0.7 + 20);
     
     /* Layout */

@@ -19,7 +19,7 @@ Tortue::Tortue(sf::RenderWindow *window){
     sprite_.setTexture(texture_);
     sf::FloatRect spriteSize=sprite_.getGlobalBounds();
     sprite_.setOrigin(spriteSize.width/2.,spriteSize.height/2.);
-    sprite_.setScale(0.15, 0.15);
+    sprite_.setScale(0.2, 0.2);
     sprite_.setPosition(pos_x_,pos_y_);
     sprite_.setRotation(90);
 }
