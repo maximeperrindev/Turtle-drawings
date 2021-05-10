@@ -36,9 +36,9 @@ void Crayon::Move(int val)
             rectangle.setPosition(pos_x_, pos_y_);
             rectangle.setRotation(angle_);
             rectangle.setFillColor(couleur_);
-
-            //delay pour la vitesse
             historique_->addEvent(rectangle);
+        }
+            //delay pour la vitesse
             pos_x_ = (val)*cos(degToRad(angle_)) + pos_x_;
             pos_y_ = (val)*sin(degToRad(angle_)) + pos_y_;
             if(angle_ != 0){
@@ -48,10 +48,5 @@ void Crayon::Move(int val)
             }
             tortue_->move(pos_x_, pos_y_);
             
-        }
-        else {
-
-
-        }
 }
     

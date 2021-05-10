@@ -38,6 +38,8 @@ void Terminal::start(string action){
                 crayon_->getHistorique()->clearHistorique();
             }
             else if(function == "taille") crayon_->setTaille(stoi(args[0]));
+            else if(function == "levestylo") crayon_->setEnable(false);
+            else if(function == "posestylo") crayon_->setEnable(true);
             crayon_->getHistorique()->addHistorique(action);
             }
         }
