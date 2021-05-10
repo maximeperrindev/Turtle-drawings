@@ -7,6 +7,7 @@ using namespace std;
 #include "terminal.h"
 #include "renderer.h"
 #include "filesystem.h"
+#include "tortue.h"
 
 int main()
 {
@@ -18,14 +19,15 @@ int main()
     
     
     Historique *hist = new Historique();
-    Crayon *crayon = new Crayon(&window, hist);
+    Tortue *tortue = new Tortue(&window);
+    Crayon *crayon = new Crayon(&window, hist, tortue);
     Terminal *terminal = new Terminal(crayon);
     Renderer *renderer = new Renderer(&window);
     FileSystem *file = new FileSystem("", hist);
     
     crayon->setPos_x(width*0.2 + width*0.8/2);
     crayon->setPos_y(0 + height*0.725/2);
-
+    tortue->move(crayon->getPos_x(), crayon->getPos_y());
     /* Police */
     sf::String playerInput;
     sf::Font font;
@@ -137,6 +139,7 @@ int main()
             nbHist++;
             }
         }
+        tortue->draw();
         window.display(); //Affichage fenetre;
     }
 

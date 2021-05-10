@@ -6,7 +6,7 @@
 //
 #include "crayon.h"
 
-Crayon::Crayon(sf::RenderWindow * window,Historique *historique,float taille, sf::Color couleur, bool enable, int pos_x, int pos_y, float angle){
+Crayon::Crayon(sf::RenderWindow * window,Historique *historique,Tortue *tortue,float taille, sf::Color couleur, bool enable, int pos_x, int pos_y, float angle){
     window_ = window;
     historique_ = historique;
     taille_ = taille;
@@ -15,11 +15,13 @@ Crayon::Crayon(sf::RenderWindow * window,Historique *historique,float taille, sf
     pos_x_ = pos_x;
     pos_y_ = pos_y;
     angle_ = angle;
+    tortue_ = tortue;
 }
 
 Crayon::~Crayon(){
     delete historique_;
     delete window_;
+    delete tortue_;
 }
 
 void Crayon::Move(int val)
@@ -44,6 +46,7 @@ void Crayon::Move(int val)
                 pos_y_ += taille_/2;
 
             }
+            tortue_->move(pos_x_, pos_y_);
             
         }
         else {

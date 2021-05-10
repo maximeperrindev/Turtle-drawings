@@ -37,6 +37,7 @@ void Terminal::start(string action){
             else if(function == "nettoie") {
                 crayon_->getHistorique()->clearHistorique();
             }
+            else if(function == "taille") crayon_->setTaille(stoi(args[0]));
             crayon_->getHistorique()->addHistorique(action);
             }
         }

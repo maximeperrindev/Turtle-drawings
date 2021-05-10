@@ -11,6 +11,8 @@
 using namespace std;
 #include <SFML/Graphics.hpp>
 #include "historique.h"
+#include "tortue.h"
+
 
 class Crayon {
     float taille_;
@@ -21,8 +23,9 @@ class Crayon {
     float angle_;
     sf::RenderWindow *window_;
     Historique *historique_;
+    Tortue *tortue_;
 public:
-    Crayon(sf::RenderWindow *window,Historique *historique,float taille = 1, sf::Color couleur = sf::Color::Black bool enable = true, int pos_x = 0, int pos_y = 0, float angle = 0);
+    Crayon(sf::RenderWindow *window,Historique *historique,Tortue *tortue,float taille = 1, sf::Color couleur = sf::Color::Black, bool enable = true, int pos_x = 0, int pos_y = 0, float angle = 0);
     ~Crayon();
     void Move(int val);
     int getTaille() { return taille_; };
@@ -31,7 +34,7 @@ public:
     int getPos_x() { return pos_x_; };
     int getPos_y() { return pos_y_; };
     float getAngle() { return angle_; };
-    void setAngle(float angle) { angle_ += angle; };
+    void setAngle(float angle) { angle_ += angle; tortue_->rotate(angle); };
     void setTaille(float taille) { taille_ = taille; };
     void setCouleur(sf::Color color) { couleur_ = color; };
     void setEnable(bool enable) { enable_ = enable; };
