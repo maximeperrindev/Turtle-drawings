@@ -24,9 +24,8 @@ int main()
     Terminal *terminal = new Terminal(crayon);
     Renderer *renderer = new Renderer(&window);
     FileSystem *file = new FileSystem("", hist);
-    
-    crayon->setPos_x(width*0.2 + width*0.8/2);
-    crayon->setPos_y(0 + height*0.725/2);
+    crayon->setOrigine(width, height);
+    crayon->goOrigine();
     tortue->move(crayon->getPos_x(), crayon->getPos_y());
     /* Police */
     sf::String playerInput;

@@ -18,8 +18,8 @@ class Crayon {
     float taille_;
     sf::Color couleur_;
     bool enable_;
-    int pos_x_;
-    int pos_y_;
+    int pos_x_,pos_y_;
+    float o_x, o_y;
     float angle_;
     sf::RenderWindow *window_;
     Historique *historique_;
@@ -41,6 +41,8 @@ public:
     void setPos_x(int pos_x){pos_x_ = pos_x;};
     void setPos_y(int pos_y){pos_y_ = pos_y;};
     void goBack();
+    void setOrigine(float width, float height);
+    void goOrigine();
     sf::RenderWindow* getWindow(){return window_;};
     Historique* getHistorique(){return historique_;};
 

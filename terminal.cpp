@@ -16,40 +16,65 @@ Terminal::~Terminal(){
 
 void Terminal::start(string action){
     bool drawed = false;
+    bool success = true;
     //Conversion en minuscule
     std::transform(action.begin(), action.end(), action.begin(),
         [](unsigned char c){ return std::tolower(c); });
     
         if(action != "stop"){
-            unsigned long parenthesisIndex = action.find(' ');
+            long parenthesisIndex = action.find(' ');
             string arguments = action.substr(parenthesisIndex+1, action.back());
             vector<string> args = split(arguments, ",");
             string function = action.substr(0,parenthesisIndex);
-            if(args[0] != ""){
-            if(function == "avance"){
-                crayon_->Move(stoi(args[0]));
-                cout<<"Avance de "<<stoi(args[0])<<endl;
-                drawed = true;
-            }
-            if(function == "recule"){
-                crayon_->Move(-(stoi(args[0])));
-                drawed = true;
-            }
-            else if(function == "droite") crayon_->setAngle(stof(args[0]));
-            else if(function == "gauche") crayon_->setAngle(-(stof(args[0])));
-            else if(function == "nettoie") {
-                crayon_->getHistorique()->clearHistorique();
-            }
-            else if(function == "taille") crayon_->setTaille(stoi(args[0]));
-            else if(function == "levestylo") crayon_->setEnable(false);
-            else if(function == "posestylo") crayon_->setEnable(true);
-            else if(function == "retour"){
-                if(crayon_->getHistorique()->getHistorique().size() != 0){
-                    crayon_->goBack();
-                    crayon_->getHistorique()->deleteLasteEvent();
+            if(parenthesisIndex != -1){
+                if(function == "avance"){
+                    crayon_->Move(stoi(args[0]));
+                    cout<<"Avance de "<<stoi(args[0])<<endl;
+                    drawed = true;
                 }
+                else if(function == "recule"){
+                    crayon_->Move(-(stoi(args[0])));
+                    drawed = true;
+                }
+                else if(function == "droite") crayon_->setAngle(stof(args[0]));
+                else if(function == "gauche") crayon_->setAngle(-(stof(args[0])));
+                else if(function == "taille") crayon_->setTaille(stoi(args[0]));
+                else if(function == "repete"){
+                    int occurations = stoi(args[0]);
+                    long argsIndex = action.find('[');
+                    long argsIndexEnd = action.find(']');
+                    string strArgs = action.substr(argsIndex+1, argsIndexEnd - argsIndex -1);
+                    vector<string> argsRepete = split(strArgs, " ");
+                    vector<string> argsTab = {};
+                    for(int x = 0; x<argsRepete.size(); x++){
+                        if( x%2 == 0 ) argsTab.push_back(argsRepete[x]);
+                        else argsTab[argsTab.size()-1] += " " + argsRepete[x];
+                    }
+                    for(int i = 0; i<occurations; i++){
+                        for(int y=0; y<argsTab.size();y++){
+                            start(argsTab[y]);
+                        }
+                    }
+                }
+                else success = false;
+            }else{
+                if(function == "origine") crayon_->goOrigine();
+                else if(function == "nettoie") {
+                    crayon_->getHistorique()->clearHistorique();
+                }
+                else if(function == "levestylo") crayon_->setEnable(false);
+                else if(function == "posestylo") crayon_->setEnable(true);
+                else if(function == "retour"){
+                    if(crayon_->getHistorique()->getHistorique().size() != 0){
+                        crayon_->goBack();
+                        crayon_->getHistorique()->deleteLasteEvent();
+                    }
+                }
+                else success = false;
             }
-            crayon_->getHistorique()->addHistorique(action);
+            if(success){
+                crayon_->getHistorique()->addHistorique(action);
+                cout<<"Historique"<<endl;
             }
         }
 }

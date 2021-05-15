@@ -58,4 +58,14 @@ void Crayon::goBack(){
     
     
 }
+void Crayon::setOrigine(float width, float height){
+    o_x = width*0.2 + width*0.8/2;
+    o_y = height*0.725/2;
+}
+
+void Crayon::goOrigine(){
+    pos_x_ = o_x;
+    pos_y_ = o_y;
+    Move(0);
+}
     
