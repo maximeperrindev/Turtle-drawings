@@ -38,7 +38,6 @@ void Crayon::Move(int val)
             rectangle.setFillColor(couleur_);
             historique_->addEvent(rectangle);
         }
-            //delay pour la vitesse
             pos_x_ = (val)*cos(degToRad(angle_)) + pos_x_ + taille_/2;
             pos_y_ = (val)*sin(degToRad(angle_)) + pos_y_ + taille_/2;
             if(angle_ != 0){
@@ -46,7 +45,7 @@ void Crayon::Move(int val)
                 pos_y_ += taille_/2;
 
             }
-        tortue_->setPosition(pos_x_, pos_y_);
+        //tortue_->setPosition(pos_x_, pos_y_);
 
 }
 
@@ -54,7 +53,7 @@ void Crayon::goBack(){
     float size = historique_->getHistorique()[historique_->getHistorique().size()-1].getSize().x;
     pos_x_ -= (size)*cos(degToRad(angle_));
     pos_y_ -= (size)*sin(degToRad(angle_));
-    tortue_->setPosition(pos_x_, pos_y_);
+    //tortue_->setPosition(pos_x_, pos_y_);
     
     
 }

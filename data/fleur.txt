@@ -51,7 +51,7 @@ Gauche 240
 Repete 9 [avance 10 droite 10]
 Droite 90
 Repete 9 [avance 10 droite 10]
-Droite 30
+Gauche 60
 Taille 3
 Couleur 112 215 78
 Avance 300

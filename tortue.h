@@ -7,7 +7,8 @@
 
 #ifndef tortue_h
 #define tortue_h
-
+#include <iostream>
+using namespace std;
 #include <stdio.h>
 #include <SFML/Graphics.hpp>
 

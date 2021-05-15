@@ -35,7 +35,7 @@ void Renderer::renderLayout(float width, float height){
     /* Layout */
     sf::RectangleShape drawingForm(sf::Vector2f(width*0.8, height*0.725));
     sf::RectangleShape historiqueForm(sf::Vector2f(width*0.2, height*0.725));
-    sf::RectangleShape historique(sf::Vector2f(width*0.2-150, height*0.45));
+    sf::RectangleShape historique(sf::Vector2f(width*0.2-30, height*0.45));
     sf::RectangleShape inputForm(sf::Vector2f(width*0.5, height*0.2+100));
     sf::RectangleShape lexique(sf::Vector2f(width*0.5, height*0.2));
     sf::RectangleShape input(sf::Vector2f(width*0.5 - 50, height*0.075));
@@ -47,7 +47,7 @@ void Renderer::renderLayout(float width, float height){
     historiqueForm.setOutlineThickness(2);
     historiqueForm.setOutlineColor(sf::Color::Black);
     historiqueForm.setFillColor(sf::Color(202, 218, 243));
-    historique.setPosition(75,330);
+    historique.setPosition(15,330);
     historique.setOutlineThickness(2);
     historique.setOutlineColor(sf::Color::Black);
     lexique.setPosition(0,height*0.7);

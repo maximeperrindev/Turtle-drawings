@@ -16,6 +16,8 @@ int main()
     sf::RenderWindow window(i.front(), "Logo translate");
     unsigned int width = i.front().width; //Largeur de la fenêtre
     unsigned int height = i.front().height; //Hauteur de la fenêtre
+    unsigned int size =  0;
+    float factor = 0.f, speed = .0001f;
 
     Historique *hist = new Historique();
     Tortue *tortue = new Tortue(&window);
@@ -158,6 +160,15 @@ int main()
         window.draw(txt_fleur);
         window.draw(playerText); //Affichage saisie utilisateur
 
+ 
+        if(size != crayon->getHistorique()->getHistorique().size()){
+            size = crayon->getHistorique()->getHistorique().size();
+            factor = 0.0f;
+        }
+        factor += speed * 60;
+        cout<<factor<<endl;
+        tortue->move(tortue->getPosition(), sf::Vector2f{(float)crayon->getPos_x(),(float)crayon->getPos_y()} , factor);
+
         for(auto i : crayon->getHistorique()->getHistorique()){
             window.draw(i); //Affichage du dessin
         }
@@ -166,7 +177,7 @@ int main()
             if(345+nbHist*55<345+height*0.45){
             sf::Text textHistorique(j,font, 35);
             textHistorique.setFillColor(sf::Color::Black);
-            textHistorique.setPosition(85, 345 + nbHist*50);
+            textHistorique.setPosition(40, 345 + nbHist*50);
             window.draw(textHistorique);
             nbHist++;
             }

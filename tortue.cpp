@@ -22,12 +22,14 @@ Tortue::Tortue(sf::RenderWindow *window){
     sprite_.setOrigin(spriteSize.width/2.,spriteSize.height/2.);
     sprite_.setScale(0.2, 0.2);
     sprite_.setPosition(pos_x_,pos_y_);
-    sprite_.setRotation(0);
+    sprite_.setRotation(90);
 }
 
 void Tortue::move(sf::Vector2f pointA, sf::Vector2f pointB, float factor){
-    pos_x_ = pointA.x;
-    pos_y_ = pointA.y;
+    pos_x_ = Interpolate(pointA, pointB, factor).x;
+    pos_y_ = Interpolate(pointA, pointB, factor).y;
+    cout<<Interpolate(pointA, pointB, factor).x<<" "<<Interpolate(pointA, pointB, factor).y<<endl;
+    cout<<pos_x_<<" "<<pos_y_<<endl;
     sprite_.setPosition(Interpolate(pointA, pointB, factor));
 }
 
@@ -37,7 +39,7 @@ void Tortue::draw(){
 
 void Tortue::rotate(float angle){
     angle_+=angle;
-    sprite_.setRotation(angle_);
+    sprite_.setRotation(90+angle_);
 }
 
 void Tortue::setVisible(bool visible){
