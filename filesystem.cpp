@@ -22,3 +22,18 @@ bool FileSystem::save(){
         return false;
     }
 }
+
+vector<string> FileSystem::load(string file){
+    string line;
+    vector<string> dataArray;
+    ifstream txtFile(url_+file);
+    if(!txtFile) //Always test the file open.
+    {
+        std::cout<<"Error opening output file"<< std::endl;
+    }else{
+        while(getline(txtFile, line)){
+            dataArray.push_back(line);
+        }
+    }
+    return dataArray;
+}

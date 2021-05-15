@@ -21,7 +21,7 @@ class FileSystem{
 public:
     FileSystem(string url, Historique *historique);
     ~FileSystem(){delete historique_;};
-    void load();
+    vector<string> load(string file);
     bool save();
 };
 

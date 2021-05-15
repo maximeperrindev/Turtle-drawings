@@ -25,7 +25,7 @@ class Crayon {
     Historique *historique_;
     Tortue *tortue_;
 public:
-    Crayon(sf::RenderWindow *window,Historique *historique,Tortue *tortue,float taille = 1, sf::Color couleur = sf::Color::Black, bool enable = true, int pos_x = 0, int pos_y = 0, float angle = 0);
+    Crayon(sf::RenderWindow *window,Historique *historique,Tortue *tortue,float taille = 1, sf::Color couleur = sf::Color::Black, bool enable = true, int pos_x = 0, int pos_y = 0, float angle = -90);
     ~Crayon();
     void Move(int val);
     int getTaille() { return taille_; };
@@ -43,6 +43,7 @@ public:
     void goBack();
     void setOrigine(float width, float height);
     void goOrigine();
+    Tortue *getTortue(){return tortue_;};
     sf::RenderWindow* getWindow(){return window_;};
     Historique* getHistorique(){return historique_;};
 

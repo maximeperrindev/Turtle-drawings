@@ -24,9 +24,11 @@ int main()
     Terminal *terminal = new Terminal(crayon);
     Renderer *renderer = new Renderer(&window);
     FileSystem *file = new FileSystem("", hist);
+
     crayon->setOrigine(width, height);
     crayon->goOrigine();
     tortue->move(crayon->getPos_x(), crayon->getPos_y());
+
     /* Police */
     sf::String playerInput;
     sf::Font font;
@@ -59,6 +61,13 @@ int main()
     sf::Text txt_save("Sauvegarder",font, 40);
     txt_save.setFillColor(sf::Color::Black);
     txt_save.setPosition((btn_save.getPosition().x+btn_save.getSize().x/2 - txt_save.getGlobalBounds().width/2),(btn_save.getPosition().y));
+    
+    sf::RectangleShape btn_maison(sf::Vector2f(width*0.1-60, 50));
+    btn_maison.setFillColor(sf::Color(255, 238, 248));
+    btn_maison.setPosition(400, height*0.7 + 40);
+    sf::Text txt_maison("Maison",font, 35);
+    txt_maison.setFillColor(sf::Color::Black);
+    txt_maison.setPosition((btn_maison.getPosition().x+btn_maison.getSize().x/2 - txt_maison.getGlobalBounds().width/2),(btn_maison.getPosition().y));
 
     // on fait tourner le programme tant que la fenêtre n'a pas été fermée
     while (window.isOpen())
@@ -86,7 +95,12 @@ int main()
                         cout<<"Erreur lors de la sauvegarde"<<endl;
                     }
                 }
-
+                if (btn_maison.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
+                    cout<<"Bouton maison cliqué"<<endl;
+                    for(auto i : file->load("maison.txt")){
+                        terminal->start(i);
+                    }
+                }
             }
             // fermeture de la fenêtre lorsque l'utilisateur le souhaite
             if (event.type == sf::Event::Closed)
@@ -126,6 +140,8 @@ int main()
         window.draw(txt_envoyer);
         window.draw(btn_save);
         window.draw(txt_save);
+        window.draw(btn_maison);
+        window.draw(txt_maison);
         window.draw(playerText); //Affichage saisie utilisateur
         for(auto i : crayon->getHistorique()->getHistorique()) window.draw(i); //Affichage du dessin
         int nbHist = 0;
@@ -138,7 +154,7 @@ int main()
             nbHist++;
             }
         }
-        tortue->draw();
+        if(tortue->getVisible()) tortue->draw();
         window.display(); //Affichage fenetre;
     }
 

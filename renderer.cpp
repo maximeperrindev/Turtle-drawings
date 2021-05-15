@@ -28,7 +28,7 @@ void Renderer::renderLayout(float width, float height){
     historiqueTitle.setFillColor(sf::Color::Black);
     historiqueTitle.setPosition(75, 230);
     
-    sf::Text lexiqueTitle("Lexique :",font, 60);
+    sf::Text lexiqueTitle("Exemples :",font, 60);
     lexiqueTitle.setFillColor(sf::Color::Black);
     lexiqueTitle.setPosition(75, height*0.7 + 20);
     

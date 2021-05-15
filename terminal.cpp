@@ -14,7 +14,7 @@ Terminal::~Terminal(){
     delete crayon_;
 }
 
-void Terminal::start(string action){
+void Terminal::start(string action, bool hist){
     bool drawed = false;
     bool success = true;
     //Conversion en minuscule
@@ -52,7 +52,7 @@ void Terminal::start(string action){
                     }
                     for(int i = 0; i<occurations; i++){
                         for(int y=0; y<argsTab.size();y++){
-                            start(argsTab[y]);
+                            start(argsTab[y], false);
                         }
                     }
                 }
@@ -64,6 +64,8 @@ void Terminal::start(string action){
                 }
                 else if(function == "levestylo") crayon_->setEnable(false);
                 else if(function == "posestylo") crayon_->setEnable(true);
+                else if(function == "cachetortue") crayon_->getTortue()->setVisible(false);
+                else if(function == "montretortue") crayon_->getTortue()->setVisible(true);
                 else if(function == "retour"){
                     if(crayon_->getHistorique()->getHistorique().size() != 0){
                         crayon_->goBack();
@@ -72,7 +74,7 @@ void Terminal::start(string action){
                 }
                 else success = false;
             }
-            if(success){
+            if(success && hist){
                 crayon_->getHistorique()->addHistorique(action);
                 cout<<"Historique"<<endl;
             }

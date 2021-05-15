@@ -12,6 +12,7 @@ Tortue::Tortue(sf::RenderWindow *window){
     pos_x_ = 0;
     pos_y_ = 0;
     angle_ = 0;
+    visible_ = true;
     if (!texture_.loadFromFile("assets/logo.png"))
     {
     }
@@ -21,7 +22,7 @@ Tortue::Tortue(sf::RenderWindow *window){
     sprite_.setOrigin(spriteSize.width/2.,spriteSize.height/2.);
     sprite_.setScale(0.2, 0.2);
     sprite_.setPosition(pos_x_,pos_y_);
-    sprite_.setRotation(90);
+    sprite_.setRotation(0);
 }
 
 void Tortue::move(float x, float y){
@@ -37,4 +38,8 @@ void Tortue::draw(){
 void Tortue::rotate(float angle){
     angle_+=angle;
     sprite_.setRotation(90+angle_);
+}
+
+void Tortue::setVisible(bool visible){
+    visible_ = visible;
 }
