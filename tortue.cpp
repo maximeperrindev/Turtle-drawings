@@ -25,10 +25,10 @@ Tortue::Tortue(sf::RenderWindow *window){
     sprite_.setRotation(0);
 }
 
-void Tortue::move(float x, float y){
-    pos_x_ = x;
-    pos_y_ = y;
-    sprite_.setPosition(pos_x_, pos_y_);
+void Tortue::move(sf::Vector2f pointA, sf::Vector2f pointB, float factor){
+    pos_x_ = pointA.x;
+    pos_y_ = pointA.y;
+    sprite_.setPosition(Interpolate(pointA, pointB, factor));
 }
 
 void Tortue::draw(){
@@ -37,9 +37,19 @@ void Tortue::draw(){
 
 void Tortue::rotate(float angle){
     angle_+=angle;
-    sprite_.setRotation(90+angle_);
+    sprite_.setRotation(angle_);
 }
 
 void Tortue::setVisible(bool visible){
     visible_ = visible;
+}
+
+sf::Vector2f Tortue::Interpolate(const sf::Vector2f& pointA,const sf::Vector2f& pointB,float factor) {
+    if( factor > 1.f )
+        factor = 1.f;
+
+    else if( factor < 0.f )
+        factor = 0.f;
+    
+    return pointA + (pointB - pointA) * factor;
 }

@@ -43,6 +43,7 @@ public:
     void goBack();
     void setOrigine(float width, float height);
     void goOrigine();
+    void setColor(int red, int green, int blue){couleur_ = sf::Color(red, green, blue);};
     Tortue *getTortue(){return tortue_;};
     sf::RenderWindow* getWindow(){return window_;};
     Historique* getHistorique(){return historique_;};

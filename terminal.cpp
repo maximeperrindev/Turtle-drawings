@@ -24,7 +24,7 @@ void Terminal::start(string action, bool hist){
         if(action != "stop"){
             long parenthesisIndex = action.find(' ');
             string arguments = action.substr(parenthesisIndex+1, action.back());
-            vector<string> args = split(arguments, ",");
+            vector<string> args = split(arguments, " ");
             string function = action.substr(0,parenthesisIndex);
             if(parenthesisIndex != -1){
                 if(function == "avance"){
@@ -39,6 +39,7 @@ void Terminal::start(string action, bool hist){
                 else if(function == "droite") crayon_->setAngle(stof(args[0]));
                 else if(function == "gauche") crayon_->setAngle(-(stof(args[0])));
                 else if(function == "taille") crayon_->setTaille(stoi(args[0]));
+                else if(function == "couleur") crayon_->setColor(stoi(args[0]), stoi(args[1]), stoi(args[2]));
                 else if(function == "repete"){
                     int occurations = stoi(args[0]);
                     long argsIndex = action.find('[');

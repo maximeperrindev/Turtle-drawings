@@ -16,18 +16,17 @@ int main()
     sf::RenderWindow window(i.front(), "Logo translate");
     unsigned int width = i.front().width; //Largeur de la fenêtre
     unsigned int height = i.front().height; //Hauteur de la fenêtre
-    
-    
+
     Historique *hist = new Historique();
     Tortue *tortue = new Tortue(&window);
     Crayon *crayon = new Crayon(&window, hist, tortue);
     Terminal *terminal = new Terminal(crayon);
     Renderer *renderer = new Renderer(&window);
-    FileSystem *file = new FileSystem("", hist);
+    FileSystem *file = new FileSystem("data/", hist);
 
     crayon->setOrigine(width, height);
     crayon->goOrigine();
-    tortue->move(crayon->getPos_x(), crayon->getPos_y());
+    tortue->setPosition(crayon->getPos_x(), crayon->getPos_y());
 
     /* Police */
     sf::String playerInput;
@@ -68,7 +67,14 @@ int main()
     sf::Text txt_maison("Maison",font, 35);
     txt_maison.setFillColor(sf::Color::Black);
     txt_maison.setPosition((btn_maison.getPosition().x+btn_maison.getSize().x/2 - txt_maison.getGlobalBounds().width/2),(btn_maison.getPosition().y));
-
+    
+    sf::RectangleShape btn_fleur(sf::Vector2f(width*0.1 - 60, 50));
+    btn_fleur.setFillColor(sf::Color(255, 238, 248));
+    btn_fleur.setPosition(670, height*0.7 + 40);
+    sf::Text txt_fleur("Fleur",font, 35);
+    txt_fleur.setFillColor(sf::Color::Black);
+    txt_fleur.setPosition((btn_fleur.getPosition().x+btn_fleur.getSize().x/2 - txt_fleur.getGlobalBounds().width/2),(btn_fleur.getPosition().y));
+    
     // on fait tourner le programme tant que la fenêtre n'a pas été fermée
     while (window.isOpen())
     {
@@ -98,6 +104,12 @@ int main()
                 if (btn_maison.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
                     cout<<"Bouton maison cliqué"<<endl;
                     for(auto i : file->load("maison.txt")){
+                        terminal->start(i);
+                    }
+                }
+                if (btn_fleur.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
+                    cout<<"Bouton fleur cliqué"<<endl;
+                    for(auto i : file->load("fleur.txt")){
                         terminal->start(i);
                     }
                 }
@@ -142,8 +154,13 @@ int main()
         window.draw(txt_save);
         window.draw(btn_maison);
         window.draw(txt_maison);
+        window.draw(btn_fleur);
+        window.draw(txt_fleur);
         window.draw(playerText); //Affichage saisie utilisateur
-        for(auto i : crayon->getHistorique()->getHistorique()) window.draw(i); //Affichage du dessin
+
+        for(auto i : crayon->getHistorique()->getHistorique()){
+            window.draw(i); //Affichage du dessin
+        }
         int nbHist = 0;
         for(auto j : crayon->getHistorique()->getHistoriqueTexte()){
             if(345+nbHist*55<345+height*0.45){
