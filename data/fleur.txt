@@ -1,0 +1,58 @@
+Couleur 247 40 40
+Gauche 120
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Gauche 240
+Repete 9 [avance 10 droite 10]
+Droite 90
+Repete 9 [avance 10 droite 10]
+Droite 30
+Taille 3
+Couleur 112 215 78
+Avance 300
+Cachetortue

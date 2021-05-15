@@ -1,0 +1,861 @@
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
+cachetortue
+avance 35
+droite 90 
+avance 20
+droite 90 
+avance 35
+gauche 90 
+avance 65
+gauche 90 
+avance 150
+gauche 90 
+repete 4 [gauche 90 avance 35]
+avance 150
+repete 4 [avance 35 gauche 90]
+droite 120
+avance 150 
+droite 120
+avance 150 
+droite 30
+avance 150
+repete 4 [avance 150 droite 90]
