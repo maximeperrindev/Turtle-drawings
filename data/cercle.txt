@@ -1,0 +1,2 @@
+Repete 30 [avance 50 droite 12]
+cachetortue

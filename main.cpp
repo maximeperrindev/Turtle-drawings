@@ -17,8 +17,10 @@ int main()
     unsigned int width = i.front().width; //Largeur de la fenêtre
     unsigned int height = i.front().height; //Hauteur de la fenêtre
     unsigned int size =  0;
-    float factor = 0.f, speed = .0001f;
+    unsigned int frames = 0;
+    float factor = 0.f, speed = .00001f;
 
+    /*Déclaration des objets*/
     Historique *hist = new Historique();
     Tortue *tortue = new Tortue(&window);
     Crayon *crayon = new Crayon(&window, hist, tortue);
@@ -26,6 +28,7 @@ int main()
     Renderer *renderer = new Renderer(&window);
     FileSystem *file = new FileSystem("data/", hist);
 
+    /*Initialisation du crayon*/
     crayon->setOrigine(width, height);
     crayon->goOrigine();
     tortue->setPosition(crayon->getPos_x(), crayon->getPos_y());
@@ -34,7 +37,6 @@ int main()
     sf::String playerInput;
     sf::Font font;
     if (!font.loadFromFile("assets/LouisGeorgeCafe.ttf")) cout<<"Erreur lors du chargement de la police"<<endl;
-    
     
     /* Commande utilisateur */
     sf::Text playerText("",font, 40);
@@ -76,25 +78,30 @@ int main()
     sf::Text txt_fleur("Fleur",font, 35);
     txt_fleur.setFillColor(sf::Color::Black);
     txt_fleur.setPosition((btn_fleur.getPosition().x+btn_fleur.getSize().x/2 - txt_fleur.getGlobalBounds().width/2),(btn_fleur.getPosition().y));
+    /*Fin des boutons*/
     
-    // on fait tourner le programme tant que la fenêtre n'a pas été fermée
+    //Boucle infinie qui tourne en environ 60 IPS
     while (window.isOpen())
     {
-        // on traite tous les évènements de la fenêtre qui ont été générés depuis la dernière itération de la boucle
+        //Gestion des evenements liés à l'interaction de la fenetre
         sf::Event event;
         while (window.pollEvent(event))
         {
+            /*Si l'utilisateur effectue un clic*/
             if(event.type == sf::Event::MouseButtonPressed){
+                /*Clic bouton envoyer*/
                 if (btn_envoyer.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
                     cout<<"Bouton envoyer cliqué"<<endl;
                     terminal->start((string)playerInput);
                     playerInput.clear();
                     playerText.setString("");
                 }
+                /*Clic bouton nettoyer*/
                 if (btn_nettoyer.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
                     cout<<"Bouton nettoyer cliqué"<<endl;
                     hist->clearHistorique();
                 }
+                /*Clic bouton sauvegarder*/
                 if (btn_save.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
                     cout<<"Bouton sauvegarder cliqué"<<endl;
                     if(file->save()){
@@ -103,12 +110,14 @@ int main()
                         cout<<"Erreur lors de la sauvegarde"<<endl;
                     }
                 }
+                /*Clic bouton maison*/
                 if (btn_maison.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
                     cout<<"Bouton maison cliqué"<<endl;
                     for(auto i : file->load("maison.txt")){
                         terminal->start(i);
                     }
                 }
+                /*Clic bouton fleur*/
                 if (btn_fleur.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
                     cout<<"Bouton fleur cliqué"<<endl;
                     for(auto i : file->load("fleur.txt")){
@@ -116,7 +125,7 @@ int main()
                     }
                 }
             }
-            // fermeture de la fenêtre lorsque l'utilisateur le souhaite
+            //Fermeture de la fenêtre
             if (event.type == sf::Event::Closed)
                 window.close();
             if (event.type == sf::Event::KeyPressed)
@@ -146,6 +155,7 @@ int main()
                 }
             }
         }
+        /*On dessine toutes nos formes sur la fenêtre*/
         window.clear(sf::Color::White); //Nettoyage de la fenetre
         renderer->renderLayout(width, height); //Affichage du layout
         window.draw(btn_nettoyer);
@@ -158,9 +168,21 @@ int main()
         window.draw(txt_maison);
         window.draw(btn_fleur);
         window.draw(txt_fleur);
+        /*Carret qui clignote pour la saisie du texte*/
+        if(frames < 240)
+        {
+            playerText.setString(playerInput + "|");
+            frames++;
+        }
+        else if(frames < 480){
+            playerText.setString(playerInput);
+            frames++;
+        }else{
+            frames = 0;
+        }
         window.draw(playerText); //Affichage saisie utilisateur
-
  
+        /*Déplacement de la tortue a une certaine vitesse*/
         if(size != crayon->getHistorique()->getHistorique().size()){
             size = crayon->getHistorique()->getHistorique().size();
             factor = 0.0f;
@@ -168,10 +190,13 @@ int main()
         factor += speed * 60;
         cout<<factor<<endl;
         tortue->move(tortue->getPosition(), sf::Vector2f{(float)crayon->getPos_x(),(float)crayon->getPos_y()} , factor);
-
+        /*Fin déaplacement*/
+        
+        /*Affichage du dessin entier en parcourant l'historique qui stocke les rectangles*/
         for(auto i : crayon->getHistorique()->getHistorique()){
             window.draw(i); //Affichage du dessin
         }
+        /*Affichage de l'historique sous forme textuelle*/
         int nbHist = 0;
         for(auto j : crayon->getHistorique()->getHistoriqueTexte()){
             if(345+nbHist*55<345+height*0.45){
