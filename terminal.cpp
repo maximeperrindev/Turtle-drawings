@@ -14,6 +14,11 @@ Terminal::~Terminal(){
     delete crayon_;
 }
 
+/*
+ * Fonction qui traduit un string ex : avance 100 en commande pour le programme
+ * Entrée : action => le string à analyser, hist => un booléen qui indique si on doit stocker la commande dans l'historique
+ * Sortie : vide
+ */
 void Terminal::start(string action, bool hist){
     bool drawed = false;
     bool success = true;
@@ -82,6 +87,11 @@ void Terminal::start(string action, bool hist){
         }
 }
 
+/*
+ * Fonction qui sépare le string en fonction d'un caractère délimiteur
+ * Entrée : s => le string à séparer, delimiter => le string qui délimite
+ * Sortie : un vecteur de string qui correpond à la chaîne de caractère séparée
+ */
 vector<string> Terminal::split(string s, string delimiter){
     size_t pos_start = 0, pos_end, delim_len = delimiter.length();
     string token;

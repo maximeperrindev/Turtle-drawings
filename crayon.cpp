@@ -23,7 +23,12 @@ Crayon::~Crayon(){
     delete window_;
     delete tortue_;
 }
-
+/*
+ Déplacement du crayon
+ On dessine un rectangle de longueur val et on le rotate de l'angle angle_
+ La position finale du crayon est calculée avec de la trigonométrie
+ Entrée : val => la longueur du rectangle a dessiner
+ */
 void Crayon::Move(int val)
 {
         if (enable_ == true) {
@@ -43,25 +48,27 @@ void Crayon::Move(int val)
             if(angle_ != 0){
                 pos_x_ += taille_/2;
                 pos_y_ += taille_/2;
-
             }
-        //tortue_->setPosition(pos_x_, pos_y_);
-
 }
-
+/*
+ Retourne à l'action précédente
+ */
 void Crayon::goBack(){
     float size = historique_->getHistorique()[historique_->getHistorique().size()-1].getSize().x;
     pos_x_ -= (size)*cos(degToRad(angle_));
     pos_y_ -= (size)*sin(degToRad(angle_));
-    //tortue_->setPosition(pos_x_, pos_y_);
-    
-    
 }
+/*
+ * Défini l'origine
+ * Entrée : width => un réel pour la largeur de l'écran, height => un réel pour la hauteur de l'écran
+ */
 void Crayon::setOrigine(float width, float height){
     o_x = width*0.2 + width*0.8/2;
     o_y = height*0.725/2;
 }
-
+/*
+ Va à l'origine
+ */
 void Crayon::goOrigine(){
     pos_x_ = o_x;
     pos_y_ = o_y;

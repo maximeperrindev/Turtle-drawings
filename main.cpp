@@ -14,10 +14,10 @@ int main()
     // création de la fenêtre
     std::vector<sf::VideoMode> i = sf::VideoMode::getFullscreenModes();
     sf::RenderWindow window(i.front(), "Logo translate");
+    sf::Cursor cursor;
     unsigned int width = i.front().width; //Largeur de la fenêtre
     unsigned int height = i.front().height; //Hauteur de la fenêtre
-    unsigned int size =  0;
-    unsigned int frames = 0;
+    unsigned int size =  0, frames = 0;
     float factor = 0.f, speed = .00001f;
 
     /*Déclaration des objets*/
@@ -58,12 +58,19 @@ int main()
     txt_envoyer.setFillColor(sf::Color::Black);
     txt_envoyer.setPosition((btn_envoyer.getPosition().x+btn_envoyer.getSize().x/2 - txt_envoyer.getGlobalBounds().width/2),(btn_envoyer.getPosition().y));
     
-    sf::RectangleShape btn_save(sf::Vector2f(width*0.2-150, 60));
+    sf::RectangleShape btn_save(sf::Vector2f(width*0.2-340, 60));
     btn_save.setFillColor(sf::Color(120, 165, 90));
-    btn_save.setPosition(75,330+height*0.45 + 30);
-    sf::Text txt_save("Sauvegarder",font, 40);
+    btn_save.setPosition(15,330+height*0.45 + 30);
+    sf::Text txt_save("Sauvegarder",font, 37);
     txt_save.setFillColor(sf::Color::Black);
     txt_save.setPosition((btn_save.getPosition().x+btn_save.getSize().x/2 - txt_save.getGlobalBounds().width/2),(btn_save.getPosition().y));
+    
+    sf::RectangleShape btn_load(sf::Vector2f(width*0.2-340, 60));
+    btn_load.setFillColor(sf::Color(120, 165, 90));
+    btn_load.setPosition(width*0.2-250,330+height*0.45 + 30);
+    sf::Text txt_load("Charger",font, 37);
+    txt_load.setFillColor(sf::Color::Black);
+    txt_load.setPosition((btn_load.getPosition().x+btn_load.getSize().x/2 - txt_load.getGlobalBounds().width/2),(btn_load.getPosition().y));
     
     sf::RectangleShape btn_maison(sf::Vector2f(width*0.1-60, 50));
     btn_maison.setFillColor(sf::Color(255, 238, 248));
@@ -78,8 +85,10 @@ int main()
     sf::Text txt_fleur("Fleur",font, 35);
     txt_fleur.setFillColor(sf::Color::Black);
     txt_fleur.setPosition((btn_fleur.getPosition().x+btn_fleur.getSize().x/2 - txt_fleur.getGlobalBounds().width/2),(btn_fleur.getPosition().y));
-    /*Fin des boutons*/
     
+    vector<sf::RectangleShape> btn_list{btn_save, btn_load, btn_envoyer, btn_nettoyer, btn_maison, btn_fleur};
+    vector<sf::Text> txt_list{txt_save, txt_load,txt_envoyer, txt_nettoyer, txt_maison, txt_fleur};
+    /*Fin des boutons*/
     //Boucle infinie qui tourne en environ 60 IPS
     while (window.isOpen())
     {
@@ -87,6 +96,21 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
+            if (event.type == sf::Event::MouseMoved){
+                bool found = false;
+                for(auto i:btn_list){
+                    if(i.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
+                        if (cursor.loadFromSystem(sf::Cursor::Hand))
+                            window.setMouseCursor(cursor);
+                        i.setFillColor(sf::Color(i.getFillColor().Red.toInteger() - 100,i.getFillColor().Green.toInteger() - 100,i.getFillColor().Blue.toInteger() - 100));
+                        found = true;
+                    }
+                    if(!found){
+                        if (cursor.loadFromSystem(sf::Cursor::Arrow))
+                            window.setMouseCursor(cursor);
+                    }
+                }
+            }
             /*Si l'utilisateur effectue un clic*/
             if(event.type == sf::Event::MouseButtonPressed){
                 /*Clic bouton envoyer*/
@@ -108,6 +132,13 @@ int main()
                         cout<<"Fichier sauvegardé avec succès !"<<endl;
                     }else{
                         cout<<"Erreur lors de la sauvegarde"<<endl;
+                    }
+                }
+                /*Clic bouton charger*/
+                if (btn_load.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
+                    cout<<"Bouton charger cliqué"<<endl;
+                    for(auto i : file->load("historique.txt")){
+                        terminal->start(i);
                     }
                 }
                 /*Clic bouton maison*/
@@ -158,16 +189,8 @@ int main()
         /*On dessine toutes nos formes sur la fenêtre*/
         window.clear(sf::Color::White); //Nettoyage de la fenetre
         renderer->renderLayout(width, height); //Affichage du layout
-        window.draw(btn_nettoyer);
-        window.draw(txt_nettoyer);
-        window.draw(btn_envoyer);
-        window.draw(txt_envoyer);
-        window.draw(btn_save);
-        window.draw(txt_save);
-        window.draw(btn_maison);
-        window.draw(txt_maison);
-        window.draw(btn_fleur);
-        window.draw(txt_fleur);
+        for(auto i : btn_list) window.draw(i); //Boutons
+        for(auto i : txt_list) window.draw(i); //Textes des boutons
         /*Carret qui clignote pour la saisie du texte*/
         if(frames < 240)
         {
@@ -188,9 +211,8 @@ int main()
             factor = 0.0f;
         }
         factor += speed * 60;
-        cout<<factor<<endl;
         tortue->move(tortue->getPosition(), sf::Vector2f{(float)crayon->getPos_x(),(float)crayon->getPos_y()} , factor);
-        /*Fin déaplacement*/
+        /*Fin déplacement*/
         
         /*Affichage du dessin entier en parcourant l'historique qui stocke les rectangles*/
         for(auto i : crayon->getHistorique()->getHistorique()){
@@ -208,6 +230,8 @@ int main()
             }
         }
         if(tortue->getVisible()) tortue->draw();
+        
+        
         window.display(); //Affichage fenetre;
     }
 

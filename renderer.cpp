@@ -8,8 +8,12 @@
 using namespace std;
 #include "renderer.h"
 
+/*
+ * Création de l'interface de jeu
+ * Entrée : width => un réel correspondant à la largeur de l'écran, height => un réel correspondant à la hauteur de l'écran, 
+ */
 void Renderer::renderLayout(float width, float height){
-    /* LOGO */
+    /* Logo tortue */
     sf::Texture logo;
     sf::Sprite logoSprite;
     logoSprite.setPosition(500, 500);
@@ -21,7 +25,7 @@ void Renderer::renderLayout(float width, float height){
     logoSprite.setOrigin(spriteSize.width/2.,spriteSize.height/2.);
     logoSprite.setPosition(spriteSize.width/4,spriteSize.height/4);
     
-    /* Font */
+    /* Police */
     sf::Font font;
     if (!font.loadFromFile("assets/LouisGeorgeCafe.ttf")) cout<<"Erreur lors du chargement de la police"<<endl;
     sf::Text historiqueTitle("Historique :",font, 60);
@@ -32,7 +36,7 @@ void Renderer::renderLayout(float width, float height){
     lexiqueTitle.setFillColor(sf::Color::Black);
     lexiqueTitle.setPosition(75, height*0.7 + 20);
     
-    /* Layout */
+    /* Layout/GUI */
     sf::RectangleShape drawingForm(sf::Vector2f(width*0.8, height*0.725));
     sf::RectangleShape historiqueForm(sf::Vector2f(width*0.2, height*0.725));
     sf::RectangleShape historique(sf::Vector2f(width*0.2-30, height*0.45));
@@ -58,8 +62,11 @@ void Renderer::renderLayout(float width, float height){
     inputForm.setOutlineColor(sf::Color::Black);
     inputForm.setPosition(width*0.5,height*0.7);
     inputForm.setFillColor(sf::Color(202, 218, 243));
+    input.setOutlineThickness(1);
+    input.setOutlineColor(sf::Color::Black);
     input.setPosition(width*0.5 + 25,height*0.7 + 30);
     
+    /* Rendering/Affichage */
     window_->draw(drawingForm);
     window_->draw(historiqueForm);
     window_->draw(historique);
