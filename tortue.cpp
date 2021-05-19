@@ -31,8 +31,6 @@ Tortue::Tortue(sf::RenderWindow *window){
 void Tortue::move(sf::Vector2f pointA, sf::Vector2f pointB, float factor){
     pos_x_ = Interpolate(pointA, pointB, factor).x;
     pos_y_ = Interpolate(pointA, pointB, factor).y;
-    cout<<Interpolate(pointA, pointB, factor).x<<" "<<Interpolate(pointA, pointB, factor).y<<endl;
-    cout<<pos_x_<<" "<<pos_y_<<endl;
     sprite_.setPosition(Interpolate(pointA, pointB, factor));
 }
 

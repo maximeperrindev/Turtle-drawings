@@ -63,8 +63,8 @@ void Crayon::goBack(){
  * Entrée : width => un réel pour la largeur de l'écran, height => un réel pour la hauteur de l'écran
  */
 void Crayon::setOrigine(float width, float height){
-    o_x = width*0.2 + width*0.8/2;
-    o_y = height*0.725/2;
+    o_x = width*0.3 + width*0.7/2;
+    o_y = height*0.825/2;
 }
 /*
  Va à l'origine

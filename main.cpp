@@ -12,11 +12,11 @@ using namespace std;
 int main()
 {
     // création de la fenêtre
-    std::vector<sf::VideoMode> i = sf::VideoMode::getFullscreenModes();
-    sf::RenderWindow window(i.front(), "Logo translate");
+    //std::vector<sf::VideoMode> i = sf::VideoMode::getFullscreenModes();
+    sf::RenderWindow window(sf::VideoMode(1920,1080), "Logo translate");
     sf::Cursor cursor;
-    unsigned int width = i.front().width; //Largeur de la fenêtre
-    unsigned int height = i.front().height; //Hauteur de la fenêtre
+    unsigned int width = 1920; //Largeur de la fenêtre
+    unsigned int height = 1080; //Hauteur de la fenêtre
     unsigned int size =  0, frames = 0;
     float factor = 0.f, speed = .00001f;
 
@@ -41,53 +41,67 @@ int main()
     /* Commande utilisateur */
     sf::Text playerText("",font, 40);
     playerText.setFillColor(sf::Color::Black);
-    playerText.setPosition(width*0.5 + 35, height*0.7 + 35);
+    playerText.setPosition(width*0.5 + 35, height*0.8 + 35);
     
     /* Boutons */
     sf::RectangleShape btn_nettoyer(sf::Vector2f(300, 60));
     btn_nettoyer.setFillColor(sf::Color(209, 109, 106));
-    btn_nettoyer.setPosition(width*0.5 + 25,height*0.7 + 230);
-    sf::Text txt_nettoyer("Nettoyer",font, 40);
+    btn_nettoyer.setPosition(width*0.5 + 25,height*0.7 + 250);
+    sf::Text txt_nettoyer("Nettoyer",font, 37);
     txt_nettoyer.setFillColor(sf::Color::Black);
     txt_nettoyer.setPosition((btn_nettoyer.getPosition().x+btn_nettoyer.getSize().x/2 - txt_nettoyer.getGlobalBounds().width/2),(btn_nettoyer.getPosition().y));
     
     sf::RectangleShape btn_envoyer(sf::Vector2f(300, 60));
     btn_envoyer.setFillColor(sf::Color(120, 165, 90));
-    btn_envoyer.setPosition(width - btn_envoyer.getSize().x - 25,height*0.7 + 230);
-    sf::Text txt_envoyer("Envoyer",font, 40);
+    btn_envoyer.setPosition(width - btn_envoyer.getSize().x - 25,height*0.7 + 250);
+    sf::Text txt_envoyer("Envoyer",font, 37);
     txt_envoyer.setFillColor(sf::Color::Black);
     txt_envoyer.setPosition((btn_envoyer.getPosition().x+btn_envoyer.getSize().x/2 - txt_envoyer.getGlobalBounds().width/2),(btn_envoyer.getPosition().y));
     
-    sf::RectangleShape btn_save(sf::Vector2f(width*0.2-340, 60));
+    sf::RectangleShape btn_save(sf::Vector2f(width*0.3-340, 60));
     btn_save.setFillColor(sf::Color(120, 165, 90));
-    btn_save.setPosition(15,330+height*0.45 + 30);
-    sf::Text txt_save("Sauvegarder",font, 37);
+    btn_save.setPosition(15,250+height*0.45 + 30);
+    sf::Text txt_save("Sauvegarder",font, 35);
     txt_save.setFillColor(sf::Color::Black);
     txt_save.setPosition((btn_save.getPosition().x+btn_save.getSize().x/2 - txt_save.getGlobalBounds().width/2),(btn_save.getPosition().y));
     
-    sf::RectangleShape btn_load(sf::Vector2f(width*0.2-340, 60));
+    sf::RectangleShape btn_load(sf::Vector2f(width*0.3-340, 60));
     btn_load.setFillColor(sf::Color(120, 165, 90));
-    btn_load.setPosition(width*0.2-250,330+height*0.45 + 30);
-    sf::Text txt_load("Charger",font, 37);
+    btn_load.setPosition(width*0.3-250,250+height*0.45 + 30);
+    sf::Text txt_load("Charger",font, 35);
     txt_load.setFillColor(sf::Color::Black);
     txt_load.setPosition((btn_load.getPosition().x+btn_load.getSize().x/2 - txt_load.getGlobalBounds().width/2),(btn_load.getPosition().y));
     
-    sf::RectangleShape btn_maison(sf::Vector2f(width*0.1-60, 50));
+    sf::RectangleShape btn_maison(sf::Vector2f(width*0.1 + 50, 50));
     btn_maison.setFillColor(sf::Color(255, 238, 248));
-    btn_maison.setPosition(400, height*0.7 + 40);
-    sf::Text txt_maison("Maison",font, 35);
+    btn_maison.setPosition(325, height*0.8 + 30);
+    sf::Text txt_maison("Maison",font, 33);
     txt_maison.setFillColor(sf::Color::Black);
     txt_maison.setPosition((btn_maison.getPosition().x+btn_maison.getSize().x/2 - txt_maison.getGlobalBounds().width/2),(btn_maison.getPosition().y));
     
-    sf::RectangleShape btn_fleur(sf::Vector2f(width*0.1 - 60, 50));
+    sf::RectangleShape btn_fleur(sf::Vector2f(width*0.1 + 50, 50));
     btn_fleur.setFillColor(sf::Color(255, 238, 248));
-    btn_fleur.setPosition(670, height*0.7 + 40);
-    sf::Text txt_fleur("Fleur",font, 35);
+    btn_fleur.setPosition(610, height*0.8 + 30);
+    sf::Text txt_fleur("Fleur",font, 33);
     txt_fleur.setFillColor(sf::Color::Black);
     txt_fleur.setPosition((btn_fleur.getPosition().x+btn_fleur.getSize().x/2 - txt_fleur.getGlobalBounds().width/2),(btn_fleur.getPosition().y));
     
-    vector<sf::RectangleShape> btn_list{btn_save, btn_load, btn_envoyer, btn_nettoyer, btn_maison, btn_fleur};
-    vector<sf::Text> txt_list{txt_save, txt_load,txt_envoyer, txt_nettoyer, txt_maison, txt_fleur};
+    sf::RectangleShape btn_triangle(sf::Vector2f(width*0.1 + 50, 50));
+    btn_triangle.setFillColor(sf::Color(255, 238, 248));
+    btn_triangle.setPosition(325, height*0.8 + 110);
+    sf::Text txt_triangle("Triangle",font, 33);
+    txt_triangle.setFillColor(sf::Color::Black);
+    txt_triangle.setPosition((btn_triangle.getPosition().x+btn_triangle.getSize().x/2 - txt_triangle.getGlobalBounds().width/2),(btn_triangle.getPosition().y));
+    
+    sf::RectangleShape btn_cercle(sf::Vector2f(width*0.1 + 50, 50));
+    btn_cercle.setFillColor(sf::Color(255, 238, 248));
+    btn_cercle.setPosition(610, height*0.8 + 110);
+    sf::Text txt_cercle("Cercle",font, 33);
+    txt_cercle.setFillColor(sf::Color::Black);
+    txt_cercle.setPosition((btn_cercle.getPosition().x+btn_cercle.getSize().x/2 - txt_cercle.getGlobalBounds().width/2),(btn_cercle.getPosition().y));
+    
+    vector<sf::RectangleShape> btn_list{btn_save, btn_load, btn_envoyer, btn_nettoyer, btn_maison, btn_fleur, btn_triangle, btn_cercle};
+    vector<sf::Text> txt_list{txt_save, txt_load,txt_envoyer, txt_nettoyer, txt_maison, txt_fleur, txt_triangle, txt_cercle};
     /*Fin des boutons*/
     //Boucle infinie qui tourne en environ 60 IPS
     while (window.isOpen())
@@ -152,6 +166,18 @@ int main()
                 if (btn_fleur.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
                     cout<<"Bouton fleur cliqué"<<endl;
                     for(auto i : file->load("fleur.txt")){
+                        terminal->start(i);
+                    }
+                }
+                if(btn_triangle.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
+                    cout<<"Bouton triangle cliqué"<<endl;
+                    for(auto i : file->load("triangle.txt")){
+                        terminal->start(i);
+                    }
+                }
+                if (btn_cercle.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)){
+                    cout<<"Bouton cercle cliqué"<<endl;
+                    for(auto i : file->load("cercle.txt")){
                         terminal->start(i);
                     }
                 }
@@ -221,10 +247,10 @@ int main()
         /*Affichage de l'historique sous forme textuelle*/
         int nbHist = 0;
         for(auto j : crayon->getHistorique()->getHistoriqueTexte()){
-            if(345+nbHist*55<345+height*0.45){
+            if(345+nbHist*55<265+height*0.45){
             sf::Text textHistorique(j,font, 35);
             textHistorique.setFillColor(sf::Color::Black);
-            textHistorique.setPosition(40, 345 + nbHist*50);
+            textHistorique.setPosition(30, 265 + nbHist*50);
             window.draw(textHistorique);
             nbHist++;
             }
