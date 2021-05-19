@@ -12,8 +12,7 @@ using namespace std;
 int main()
 {
     // création de la fenêtre
-    //std::vector<sf::VideoMode> i = sf::VideoMode::getFullscreenModes();
-    sf::RenderWindow window(sf::VideoMode(1920,1080), "Logo translate");
+    sf::RenderWindow window(sf::VideoMode(1920,1080), "Draw with Turtle");
     sf::Cursor cursor;
     unsigned int width = 1920; //Largeur de la fenêtre
     unsigned int height = 1080; //Hauteur de la fenêtre
